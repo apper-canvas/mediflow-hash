@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { patientService } from "@/services/api/patientService";
+import { toast } from "react-toastify";
+import PatientForm from "@/components/organisms/PatientForm";
 import PatientCard from "@/components/molecules/PatientCard";
 import SearchBar from "@/components/molecules/SearchBar";
-import Button from "@/components/atoms/Button";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
-import PatientForm from "@/components/organisms/PatientForm";
-import { patientService } from "@/services/api/patientService";
-import { toast } from "react-toastify";
+import Button from "@/components/atoms/Button";
 
 const Patients = () => {
   const [patients, setPatients] = useState([]);
@@ -76,7 +76,6 @@ const Patients = () => {
           New Patient
         </Button>
       </div>
-
 {showForm && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
@@ -93,14 +92,13 @@ const Patients = () => {
             </div>
             <PatientForm
               onSubmit={handleCreatePatient}
-              onCancel={() => setShowForm(false)}
+onCancel={() => setShowForm(false)}
             />
           </div>
         </div>
       )}
-      ) : (
-        <>
-          <div className="bg-white rounded-lg shadow-card p-6">
+
+      <div className="bg-white rounded-lg shadow-card p-6">
             <div className="flex items-center space-x-4 mb-6">
               <div className="flex-1">
                 <SearchBar
@@ -134,12 +132,10 @@ const Patients = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredPatients.map((patient) => (
                   <PatientCard key={patient.Id} patient={patient} />
-                ))}
+))}
               </div>
-)}
+            )}
           </div>
-        </>
-      )}
     </div>
   );
 };
