@@ -77,17 +77,27 @@ const Patients = () => {
         </Button>
       </div>
 
-      {showForm ? (
-        <div className="bg-white rounded-lg shadow-card p-6">
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold text-gray-900">Register New Patient</h2>
-            <p className="text-gray-600 mt-1">Enter patient information to create a new record</p>
+{showForm && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setShowForm(false);
+            }
+          }}
+        >
+          <div className="bg-white rounded-lg shadow-elevated p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold text-gray-900">Register New Patient</h2>
+              <p className="text-gray-600 mt-1">Enter patient information to create a new record</p>
+            </div>
+            <PatientForm
+              onSubmit={handleCreatePatient}
+              onCancel={() => setShowForm(false)}
+            />
           </div>
-          <PatientForm
-            onSubmit={handleCreatePatient}
-            onCancel={() => setShowForm(false)}
-          />
         </div>
+      )}
       ) : (
         <>
           <div className="bg-white rounded-lg shadow-card p-6">
