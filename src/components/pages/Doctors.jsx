@@ -147,15 +147,16 @@ const getDoctorAppointments = (doctorId) => {
       setFormData(prev => ({
         ...prev,
         [field]: value
-      }));
+}));
     }
   };
+
   if (loading) return <Loading type="table" />;
   if (error) return <Error message={error} onRetry={loadData} />;
 
   return (
     <div className="space-y-6">
-<div className="flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Doctors</h1>
           <p className="text-gray-600 mt-1">Manage doctor profiles and availability</p>
@@ -183,7 +184,7 @@ const getDoctorAppointments = (doctorId) => {
             const todayAppointments = getTodayAppointments(doctor.Id);
             
             return (
-<div key={doctor.Id} className="card">
+              <div key={doctor.Id} className="card">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -255,113 +256,112 @@ const getDoctorAppointments = (doctorId) => {
               </div>
             );
           })}
-</div>
+        </div>
+      )}
+
+      {/* Doctor Form Modal */}
+      {showForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">
+                {editingDoctor ? 'Edit Doctor' : 'Add New Doctor'}
+              </h2>
+              <Button
+                variant="ghost"
+                onClick={() => setShowForm(false)}
+                className="p-2"
+              >
+                <ApperIcon name="X" size={20} />
+              </Button>
+            </div>
+
+            <form onSubmit={handleSubmitForm} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="form-label">Doctor Name *</label>
+                  <input
+                    type="text"
+                    value={formData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    className="form-input"
+                    placeholder="Enter doctor name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="form-label">Specialization *</label>
+                  <input
+                    type="text"
+                    value={formData.specialization}
+                    onChange={(e) => handleInputChange('specialization', e.target.value)}
+                    className="form-input"
+                    placeholder="Enter specialization"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="form-label">Email Address *</label>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className="form-input"
+                    placeholder="Enter email address"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="form-label">Phone Number *</label>
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    className="form-input"
+                    placeholder="Enter phone number"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="form-label">Weekly Availability</label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {Object.entries(formData.availability).map(([day, hours]) => (
+                    <div key={day}>
+                      <label className="block text-sm font-medium text-gray-600 mb-1">{day}</label>
+                      <input
+                        type="text"
+                        value={hours}
+                        onChange={(e) => handleInputChange(`availability.${day}`, e.target.value)}
+                        className="form-input"
+                        placeholder="e.g., 9:00 AM - 5:00 PM"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end space-x-3 pt-6 border-t border-gray-200">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => setShowForm(false)}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit" variant="primary">
+                  {editingDoctor ? 'Update Doctor' : 'Add Doctor'}
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
       )}
     </div>
-
-    {/* Doctor Form Modal */}
-    {showForm && (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white rounded-lg p-6 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">
-              {editingDoctor ? 'Edit Doctor' : 'Add New Doctor'}
-            </h2>
-            <Button
-              variant="ghost"
-              onClick={() => setShowForm(false)}
-              className="p-2"
-            >
-              <ApperIcon name="X" size={20} />
-            </Button>
-          </div>
-
-          <form onSubmit={handleSubmitForm} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="form-label">Doctor Name *</label>
-                <input
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="form-input"
-                  placeholder="Enter doctor name"
-                  required
-                />
-              </div>
-              <div>
-                <label className="form-label">Specialization *</label>
-                <input
-                  type="text"
-                  value={formData.specialization}
-                  onChange={(e) => handleInputChange('specialization', e.target.value)}
-                  className="form-input"
-                  placeholder="Enter specialization"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="form-label">Email Address *</label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="form-input"
-                  placeholder="Enter email address"
-                  required
-                />
-              </div>
-              <div>
-                <label className="form-label">Phone Number *</label>
-                <input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="form-input"
-                  placeholder="Enter phone number"
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="form-label">Weekly Availability</label>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {Object.entries(formData.availability).map(([day, hours]) => (
-                  <div key={day}>
-                    <label className="block text-sm font-medium text-gray-600 mb-1">{day}</label>
-                    <input
-                      type="text"
-                      value={hours}
-                      onChange={(e) => handleInputChange(`availability.${day}`, e.target.value)}
-                      className="form-input"
-                      placeholder="e.g., 9:00 AM - 5:00 PM"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center justify-end space-x-3 pt-6 border-t border-gray-200">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => setShowForm(false)}
-              >
-                Cancel
-              </Button>
-              <Button type="submit" variant="primary">
-                {editingDoctor ? 'Update Doctor' : 'Add Doctor'}
-              </Button>
-            </div>
-          </form>
-        </div>
-      </div>
-    )}
-  </div>
   );
 };
 
