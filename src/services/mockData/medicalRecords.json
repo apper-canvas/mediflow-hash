@@ -1,0 +1,106 @@
+[
+  {
+    "Id": 1,
+    "patientId": 1,
+    "visitDate": "2024-01-12",
+    "diagnosis": "Hypertension, controlled",
+    "treatment": "Continue current medication regimen",
+    "doctorId": 1,
+    "prescriptions": [
+      {
+        "medication": "Lisinopril",
+        "dosage": "10mg daily",
+        "duration": "90 days"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "patientId": 1,
+    "visitDate": "2023-10-15",
+    "diagnosis": "Hypertension, initial diagnosis",
+    "treatment": "Lifestyle modifications and antihypertensive medication",
+    "doctorId": 1,
+    "prescriptions": [
+      {
+        "medication": "Lisinopril",
+        "dosage": "5mg daily",
+        "duration": "30 days"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "patientId": 2,
+    "visitDate": "2024-01-08",
+    "diagnosis": "Chest pain, rule out cardiac cause",
+    "treatment": "Cardiac workup ordered, follow-up in 2 weeks",
+    "doctorId": 2,
+    "prescriptions": []
+  },
+  {
+    "Id": 4,
+    "patientId": 3,
+    "visitDate": "2024-01-15",
+    "diagnosis": "Pregnancy, 20 weeks gestation",
+    "treatment": "Routine prenatal care, ultrasound scheduled",
+    "doctorId": 3,
+    "prescriptions": [
+      {
+        "medication": "Prenatal vitamins",
+        "dosage": "1 tablet daily",
+        "duration": "Until delivery"
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "patientId": 4,
+    "visitDate": "2023-12-20",
+    "diagnosis": "Hyperlipidemia",
+    "treatment": "Statin therapy initiated, dietary counseling",
+    "doctorId": 1,
+    "prescriptions": [
+      {
+        "medication": "Atorvastatin",
+        "dosage": "20mg daily",
+        "duration": "90 days"
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "patientId": 5,
+    "visitDate": "2023-11-30",
+    "diagnosis": "Vitamin D deficiency",
+    "treatment": "Vitamin D supplementation",
+    "doctorId": 1,
+    "prescriptions": [
+      {
+        "medication": "Vitamin D3",
+        "dosage": "2000 IU daily",
+        "duration": "90 days"
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "patientId": 8,
+    "visitDate": "2024-01-05",
+    "diagnosis": "Asthma exacerbation",
+    "treatment": "Bronchodilator therapy, follow-up in 1 week",
+    "doctorId": 5,
+    "prescriptions": [
+      {
+        "medication": "Albuterol inhaler",
+        "dosage": "2 puffs every 4-6 hours as needed",
+        "duration": "30 days"
+      },
+      {
+        "medication": "Prednisone",
+        "dosage": "20mg daily for 5 days",
+        "duration": "5 days"
+      }
+    ]
+  }
+]

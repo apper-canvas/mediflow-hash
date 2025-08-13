@@ -1,0 +1,138 @@
+[
+  {
+    "Id": 1,
+    "name": "Sarah Johnson",
+    "dateOfBirth": "1985-03-15",
+    "gender": "Female",
+    "phone": "+1-555-0123",
+    "email": "sarah.johnson@email.com",
+    "address": "123 Maple Street, Springfield, IL 62701",
+    "medicalId": "MED001",
+    "allergies": ["Penicillin", "Shellfish"],
+    "currentMedications": ["Lisinopril 10mg", "Metformin 500mg"],
+    "emergencyContact": {
+      "name": "Michael Johnson",
+      "phone": "+1-555-0124",
+      "relation": "Husband"
+    }
+  },
+  {
+    "Id": 2,
+    "name": "Robert Chen",
+    "dateOfBirth": "1978-11-22",
+    "gender": "Male",
+    "phone": "+1-555-0225",
+    "email": "robert.chen@email.com",
+    "address": "456 Oak Avenue, Springfield, IL 62702",
+    "medicalId": "MED002",
+    "allergies": ["Latex"],
+    "currentMedications": ["Aspirin 81mg"],
+    "emergencyContact": {
+      "name": "Linda Chen",
+      "phone": "+1-555-0226",
+      "relation": "Wife"
+    }
+  },
+  {
+    "Id": 3,
+    "name": "Maria Rodriguez",
+    "dateOfBirth": "1992-07-08",
+    "gender": "Female",
+    "phone": "+1-555-0327",
+    "email": "maria.rodriguez@email.com",
+    "address": "789 Pine Road, Springfield, IL 62703",
+    "medicalId": "MED003",
+    "allergies": ["Peanuts", "Sulfa drugs"],
+    "currentMedications": ["Birth control pill", "Iron supplement"],
+    "emergencyContact": {
+      "name": "Carlos Rodriguez",
+      "phone": "+1-555-0328",
+      "relation": "Brother"
+    }
+  },
+  {
+    "Id": 4,
+    "name": "David Williams",
+    "dateOfBirth": "1965-12-03",
+    "gender": "Male",
+    "phone": "+1-555-0429",
+    "email": "david.williams@email.com",
+    "address": "321 Elm Street, Springfield, IL 62704",
+    "medicalId": "MED004",
+    "allergies": ["Iodine"],
+    "currentMedications": ["Atorvastatin 20mg", "Hydrochlorothiazide 25mg"],
+    "emergencyContact": {
+      "name": "Susan Williams",
+      "phone": "+1-555-0430",
+      "relation": "Wife"
+    }
+  },
+  {
+    "Id": 5,
+    "name": "Jennifer Brown",
+    "dateOfBirth": "1989-04-18",
+    "gender": "Female",
+    "phone": "+1-555-0531",
+    "email": "jennifer.brown@email.com",
+    "address": "654 Cedar Lane, Springfield, IL 62705",
+    "medicalId": "MED005",
+    "allergies": ["Codeine"],
+    "currentMedications": ["Vitamin D3", "Calcium"],
+    "emergencyContact": {
+      "name": "James Brown",
+      "phone": "+1-555-0532",
+      "relation": "Father"
+    }
+  },
+  {
+    "Id": 6,
+    "name": "Michael Davis",
+    "dateOfBirth": "1971-09-12",
+    "gender": "Male",
+    "phone": "+1-555-0633",
+    "email": "michael.davis@email.com",
+    "address": "987 Birch Boulevard, Springfield, IL 62706",
+    "medicalId": "MED006",
+    "allergies": [],
+    "currentMedications": ["Omeprazole 20mg"],
+    "emergencyContact": {
+      "name": "Nancy Davis",
+      "phone": "+1-555-0634",
+      "relation": "Wife"
+    }
+  },
+  {
+    "Id": 7,
+    "name": "Lisa Garcia",
+    "dateOfBirth": "1996-01-25",
+    "gender": "Female",
+    "phone": "+1-555-0735",
+    "email": "lisa.garcia@email.com",
+    "address": "147 Willow Way, Springfield, IL 62707",
+    "medicalId": "MED007",
+    "allergies": ["Morphine"],
+    "currentMedications": [],
+    "emergencyContact": {
+      "name": "Maria Garcia",
+      "phone": "+1-555-0736",
+      "relation": "Mother"
+    }
+  },
+  {
+    "Id": 8,
+    "name": "Thomas Anderson",
+    "dateOfBirth": "1983-06-30",
+    "gender": "Male",
+    "phone": "+1-555-0837",
+    "email": "thomas.anderson@email.com",
+    "address": "258 Poplar Place, Springfield, IL 62708",
+    "medicalId": "MED008",
+    "allergies": ["Contrast dye"],
+    "currentMedications": ["Albuterol inhaler"],
+    "emergencyContact": {
+      "name": "Sarah Anderson",
+      "phone": "+1-555-0838",
+      "relation": "Wife"
+    }
+  }
+]

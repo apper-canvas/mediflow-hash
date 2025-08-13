@@ -1,0 +1,112 @@
+[
+  {
+    "Id": 1,
+    "patientId": 1,
+    "doctorId": 1,
+    "date": "2024-01-15",
+    "time": "09:00",
+    "duration": 30,
+    "type": "Consultation",
+    "status": "scheduled",
+    "notes": "Regular check-up and blood pressure monitoring"
+  },
+  {
+    "Id": 2,
+    "patientId": 2,
+    "doctorId": 2,
+    "date": "2024-01-15",
+    "time": "10:30",
+    "duration": 45,
+    "type": "Follow-up",
+    "status": "in-progress",
+    "notes": "Follow-up on cardiac evaluation results"
+  },
+  {
+    "Id": 3,
+    "patientId": 3,
+    "doctorId": 3,
+    "date": "2024-01-15",
+    "time": "14:00",
+    "duration": 30,
+    "type": "Consultation",
+    "status": "completed",
+    "notes": "Prenatal check-up, second trimester"
+  },
+  {
+    "Id": 4,
+    "patientId": 4,
+    "doctorId": 1,
+    "date": "2024-01-16",
+    "time": "08:30",
+    "duration": 30,
+    "type": "Check-up",
+    "status": "scheduled",
+    "notes": "Annual physical examination"
+  },
+  {
+    "Id": 5,
+    "patientId": 5,
+    "doctorId": 4,
+    "date": "2024-01-16",
+    "time": "11:00",
+    "duration": 60,
+    "type": "Consultation",
+    "status": "scheduled",
+    "notes": "Skin lesion evaluation"
+  },
+  {
+    "Id": 6,
+    "patientId": 6,
+    "doctorId": 2,
+    "date": "2024-01-17",
+    "time": "15:30",
+    "duration": 30,
+    "type": "Follow-up",
+    "status": "scheduled",
+    "notes": "Post-procedure follow-up"
+  },
+  {
+    "Id": 7,
+    "patientId": 7,
+    "doctorId": 3,
+    "date": "2024-01-18",
+    "time": "09:30",
+    "duration": 30,
+    "type": "Consultation",
+    "status": "scheduled",
+    "notes": "Initial pregnancy consultation"
+  },
+  {
+    "Id": 8,
+    "patientId": 8,
+    "doctorId": 5,
+    "date": "2024-01-19",
+    "time": "13:00",
+    "duration": 45,
+    "type": "Consultation",
+    "status": "scheduled",
+    "notes": "Respiratory evaluation for asthma management"
+  },
+  {
+    "Id": 9,
+    "patientId": 1,
+    "doctorId": 1,
+    "date": "2024-01-12",
+    "time": "10:00",
+    "duration": 30,
+    "type": "Follow-up",
+    "status": "completed",
+    "notes": "Blood pressure medication adjustment"
+  },
+  {
+    "Id": 10,
+    "patientId": 3,
+    "doctorId": 3,
+    "date": "2024-01-10",
+    "time": "16:00",
+    "duration": 30,
+    "type": "Check-up",
+    "status": "cancelled",
+    "notes": "Patient requested rescheduling"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "Id": 1,
+    "name": "Emily Harrison",
+    "specialization": "Family Medicine",
+    "email": "emily.harrison@hospital.com",
+    "phone": "+1-555-1001",
+    "availability": {
+      "Monday": "8:00 AM - 5:00 PM",
+      "Tuesday": "8:00 AM - 5:00 PM",
+      "Wednesday": "8:00 AM - 5:00 PM",
+      "Thursday": "8:00 AM - 5:00 PM",
+      "Friday": "8:00 AM - 3:00 PM"
+    }
+  },
+  {
+    "Id": 2,
+    "name": "James Mitchell",
+    "specialization": "Cardiology",
+    "email": "james.mitchell@hospital.com",
+    "phone": "+1-555-1002",
+    "availability": {
+      "Monday": "9:00 AM - 6:00 PM",
+      "Tuesday": "9:00 AM - 6:00 PM",
+      "Wednesday": "9:00 AM - 6:00 PM",
+      "Thursday": "9:00 AM - 6:00 PM",
+      "Friday": "9:00 AM - 4:00 PM"
+    }
+  },
+  {
+    "Id": 3,
+    "name": "Rachel Thompson",
+    "specialization": "Obstetrics & Gynecology",
+    "email": "rachel.thompson@hospital.com",
+    "phone": "+1-555-1003",
+    "availability": {
+      "Monday": "8:30 AM - 5:30 PM",
+      "Tuesday": "8:30 AM - 5:30 PM",
+      "Wednesday": "8:30 AM - 5:30 PM",
+      "Thursday": "8:30 AM - 5:30 PM",
+      "Friday": "8:30 AM - 2:30 PM"
+    }
+  },
+  {
+    "Id": 4,
+    "name": "Kevin Rodriguez",
+    "specialization": "Dermatology",
+    "email": "kevin.rodriguez@hospital.com",
+    "phone": "+1-555-1004",
+    "availability": {
+      "Monday": "10:00 AM - 7:00 PM",
+      "Tuesday": "10:00 AM - 7:00 PM",
+      "Wednesday": "10:00 AM - 7:00 PM",
+      "Thursday": "10:00 AM - 7:00 PM",
+      "Friday": "10:00 AM - 5:00 PM"
+    }
+  },
+  {
+    "Id": 5,
+    "name": "Amanda Foster",
+    "specialization": "Pulmonology",
+    "email": "amanda.foster@hospital.com",
+    "phone": "+1-555-1005",
+    "availability": {
+      "Monday": "7:30 AM - 4:30 PM",
+      "Tuesday": "7:30 AM - 4:30 PM",
+      "Wednesday": "7:30 AM - 4:30 PM",
+      "Thursday": "7:30 AM - 4:30 PM",
+      "Friday": "7:30 AM - 1:30 PM"
+    }
+  },
+  {
+    "Id": 6,
+    "name": "Daniel Park",
+    "specialization": "Orthopedics",
+    "email": "daniel.park@hospital.com",
+    "phone": "+1-555-1006",
+    "availability": {
+      "Monday": "8:00 AM - 6:00 PM",
+      "Tuesday": "8:00 AM - 6:00 PM",
+      "Wednesday": "8:00 AM - 6:00 PM",
+      "Thursday": "8:00 AM - 6:00 PM",
+      "Friday": "8:00 AM - 4:00 PM"
+    }
+  }
+]
