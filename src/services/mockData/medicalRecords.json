@@ -83,7 +83,7 @@
       }
     ]
   },
-  {
+{
     "Id": 7,
     "patientId": 8,
     "visitDate": "2024-01-05",
@@ -100,6 +100,51 @@
         "medication": "Prednisone",
         "dosage": "20mg daily for 5 days",
         "duration": "5 days"
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "patientId": 2,
+    "visitDate": "2024-01-20",
+    "diagnosis": "Type 2 Diabetes Mellitus, newly diagnosed",
+    "treatment": "Lifestyle modifications and antidiabetic medication",
+    "doctorId": 1,
+    "prescriptions": [
+      {
+        "medication": "Metformin",
+        "dosage": "500mg twice daily",
+        "duration": "90 days"
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "patientId": 6,
+    "visitDate": "2024-01-18",
+    "diagnosis": "Anxiety disorder",
+    "treatment": "Selective serotonin reuptake inhibitor therapy",
+    "doctorId": 4,
+    "prescriptions": [
+      {
+        "medication": "Sertraline",
+        "dosage": "50mg daily",
+        "duration": "90 days"
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "patientId": 7,
+    "visitDate": "2024-01-22",
+    "diagnosis": "Bacterial infection",
+    "treatment": "Antibiotic therapy",
+    "doctorId": 2,
+    "prescriptions": [
+      {
+        "medication": "Amoxicillin",
+        "dosage": "500mg three times daily",
+        "duration": "10 days"
       }
     ]
   }

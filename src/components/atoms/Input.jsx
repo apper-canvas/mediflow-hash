@@ -6,6 +6,7 @@ const Input = forwardRef(({
   label,
   error,
   className,
+  autoComplete = "on",
   ...props
 }, ref) => {
   return (
@@ -18,6 +19,7 @@ const Input = forwardRef(({
       <input
         ref={ref}
         type={type}
+        autoComplete={autoComplete}
         className={cn(
           "form-input",
           error && "border-error focus:ring-error",

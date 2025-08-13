@@ -6,6 +6,7 @@ import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import ApperIcon from "@/components/ApperIcon";
 import PatientForm from "@/components/organisms/PatientForm";
+import PrescriptionForm from "@/components/organisms/PrescriptionForm";
 import { patientService } from "@/services/api/patientService";
 import { appointmentService } from "@/services/api/appointmentService";
 import { medicalRecordService } from "@/services/api/medicalRecordService";
@@ -18,9 +19,10 @@ const PatientDetail = () => {
   const [patient, setPatient] = useState(null);
   const [appointments, setAppointments] = useState([]);
   const [medicalRecords, setMedicalRecords] = useState([]);
-  const [loading, setLoading] = useState(true);
+const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [editing, setEditing] = useState(false);
+  const [showPrescriptionForm, setShowPrescriptionForm] = useState(false);
 
   useEffect(() => {
     loadPatientData();
@@ -30,7 +32,7 @@ const PatientDetail = () => {
     try {
       setError("");
       const [patientData, appointmentsData, recordsData] = await Promise.all([
-        patientService.getById(parseInt(id)),
+patientService.getById(parseInt(id)),
         appointmentService.getAll(),
         medicalRecordService.getAll()
       ]);
@@ -49,8 +51,7 @@ const PatientDetail = () => {
       setLoading(false);
     }
   };
-
-  const handleUpdatePatient = async (patientData) => {
+const handleUpdatePatient = async (patientData) => {
     try {
       await patientService.update(parseInt(id), patientData);
       await loadPatientData();
@@ -58,6 +59,12 @@ const PatientDetail = () => {
     } catch (error) {
       throw error;
     }
+  };
+
+  const handlePrescriptionSuccess = () => {
+    setShowPrescriptionForm(false);
+    loadPatientData(); // Reload to show new prescription
+    toast.success('Prescription created successfully');
   };
 
   if (loading) return <Loading />;
@@ -202,6 +209,65 @@ const PatientDetail = () => {
                 </div>
               )}
             </div>
+          </div>
+        )}
+      </div>
+
+{/* Medical Records */}
+      <div className="bg-white rounded-lg shadow-card p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">Medical Records</h2>
+          <Button 
+            onClick={() => setShowPrescriptionForm(true)}
+            disabled={showPrescriptionForm}
+          >
+            <ApperIcon name="Plus" size={16} />
+            New Prescription
+          </Button>
+        </div>
+
+        {/* Prescription Form */}
+        {showPrescriptionForm && (
+          <div className="mb-6">
+            <PrescriptionForm 
+              patientId={id}
+              onSuccess={handlePrescriptionSuccess}
+              onCancel={() => setShowPrescriptionForm(false)}
+            />
+          </div>
+        )}
+
+        {medicalRecords.length === 0 ? (
+          <p className="text-gray-600">No medical records found for this patient.</p>
+        ) : (
+          <div className="space-y-4">
+            {medicalRecords.map((record) => (
+              <div key={record.Id} className="border border-gray-200 rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-medium text-gray-900">{record.diagnosis}</h3>
+                  <span className="text-sm text-gray-500">
+                    {format(new Date(record.visitDate), "MMM dd, yyyy")}
+                  </span>
+                </div>
+                
+                <p className="text-gray-700 text-sm mb-3">{record.treatment}</p>
+                
+                {record.prescriptions && record.prescriptions.length > 0 && (
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-gray-900 text-sm">Prescriptions:</h4>
+                    {record.prescriptions.map((prescription, index) => (
+                      <div key={index} className="bg-surface p-3 rounded-lg">
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-gray-900">{prescription.medication}</span>
+                          <span className="text-sm text-gray-600">{prescription.duration}</span>
+                        </div>
+                        <span className="text-sm text-gray-600">{prescription.dosage}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         )}
       </div>
