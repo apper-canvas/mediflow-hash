@@ -136,7 +136,7 @@ const Patients = () => {
                   <PatientCard key={patient.Id} patient={patient} />
                 ))}
               </div>
-            )}
+)}
           </div>
         </>
       )}
